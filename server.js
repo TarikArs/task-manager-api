@@ -12,11 +12,7 @@ app.use(express.json());
 /** Connect to MongoDB */
 
 const uri = "mongodb://localhost:27017/mern-todo-app";
-mongoose.connect(uri, {
-  useNewUrlParser: true,  
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-});
+mongoose.connect(uri);
 
 const connection = mongoose.connection;
 connection.once("open", () => {
